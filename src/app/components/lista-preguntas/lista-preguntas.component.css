@@ -1,0 +1,29 @@
+.p-datatable .p-datatable-tbody > tr > td .column-title {
+    display: none;
+}
+
+@media screen and (max-width: 40em) {
+    th,
+    .p-datatable .p-datatable-tbody > tr > td {
+        display: table-cell;
+    }
+
+    .p-datatable .p-datatable-tbody > tr > td .column-title {
+        padding: 0.4em;
+
+        display: inline-block;
+        text-overflow: ellipsis;
+        margin: -0.4em 1em -0.4em -0.4em;
+        font-weight: bold;
+        max-width: 100px;
+        min-width: 100px;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+}
+h3{
+    margin: 20px 12px;
+}
+p-card{
+    height: 100vh !important;
+}

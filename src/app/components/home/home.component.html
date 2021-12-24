@@ -1,0 +1,22 @@
+<div class="card">
+  <p-button label="Configurar Juego" class="p-button-info item" routerLink="/crear-pregunta"></p-button>
+  <p-button label="Lista Preguntas" class="p-button-info item" routerLink="/lista-preguntas"></p-button>
+  <p-button label="Iniciar Juego" class="p-button-info item" (click)="showModalDialog()"></p-button>
+  <p-button label="Historico" class="p-button-info item" routerLink="/historial"></p-button>
+</div>
+<p-dialog header="Jugador" [(visible)]="displayModal" [modal]="true" [style]="{width: '50vw'}" [draggable]="false"
+  [resizable]="true">
+  <div class="p-col-6 p-md-6">
+    <input type="text" pInputText placeholder="Ingrese el nombre" [(ngModel)]="nombre" />
+  </div>
+  <div class="p-col-6 p-md-6">
+    <p-button label="Guardar" (click)="guardar()" class="p-button-info item"></p-button>
+  </div>
+  <div class="p-col-6 p-md-6">
+    <p-dropdown [options]="jugadores" [(ngModel)]="selectedJugador" optionLabel="nombre"></p-dropdown>
+  </div>
+  <ng-template pTemplate="footer">
+    <p-button (click)="displayModal=false" label="Regresar" styleClass="p-button-text"></p-button>
+    <p-button (click)="continuar()" label="Continuar" styleClass="p-button-text"></p-button>
+  </ng-template>
+</p-dialog>

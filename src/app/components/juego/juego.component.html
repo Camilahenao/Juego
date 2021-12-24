@@ -1,0 +1,17 @@
+<p-card>
+  <ng-template pTemplate="header">
+    <h3>Jugador: {{jugador.nombre}} Ronda: {{nivel}} Acumulado: {{acumulado}} Categoría: {{categoria}}</h3>
+  </ng-template>
+  <h3>Premio : {{premio}}</h3>
+  <p>{{pregunta}}</p>
+  <div class="p-col-12 p-md-12" *ngFor="let item of opciones">
+    <div class="p-inputgroup">
+      <span class="p-inputgroup-addon"><p-radioButton name="category" [value]="item.id" inputId="1"[(ngModel)]="correcto"></p-radioButton></span>      
+      <input type="text" pInputText  [(ngModel)]="item.contenido" readonly>
+    </div>
+  </div>
+  <ng-template pTemplate="footer">
+    <p-button label="Salir" (click)="salir()" class="p-button-info "></p-button>
+    <p-button label="Continuar" (click)="continuar()" class="p-button-info "></p-button>
+  </ng-template>
+</p-card>

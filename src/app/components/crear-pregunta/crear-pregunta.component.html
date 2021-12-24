@@ -1,0 +1,46 @@
+<p-card>
+    <ng-template pTemplate="header">
+        <h3>Crear Pregunta</h3>  
+    </ng-template>
+    <div class="row">
+        <div class="p-col-12 p-md-12">
+            <span class="p-float-label">
+              <textarea id="float-input" rows="3" cols="30" pInputTextarea [(ngModel)]="pregunta"></textarea>
+              <label for="float-input">Escriba su pregunta</label>
+            </span>
+          </div>
+          <div class="p-col-12 p-md-12">
+            <div class="p-inputgroup">
+              <span class="p-inputgroup-addon"><p-radioButton name="category" value="1" inputId="1"[(ngModel)]="correcto"></p-radioButton></span>      
+              <input type="text" pInputText  [(ngModel)]="opcionUno">
+            </div>
+          </div>
+          <div class="p-col-12 p-md-12">
+            <div class="p-inputgroup">
+              <span class="p-inputgroup-addon"><p-radioButton name="category" value="2" inputId="2" [(ngModel)]="correcto"></p-radioButton></span>
+              <input type="text" pInputText [(ngModel)]="opcionDos">
+            </div>
+          </div>
+          <div class="p-col-12 p-md-12">
+            <div class="p-inputgroup">
+              <span class="p-inputgroup-addon"><p-radioButton name="category"  value="3"inputId="3" [(ngModel)]="correcto"></p-radioButton></span>
+              <input type="text" pInputText [(ngModel)]="opcionTres">
+            </div>
+          </div>
+          <div class="p-col-12 p-md-12">
+            <div class="p-inputgroup">
+              <span class="p-inputgroup-addon"><p-radioButton name="category" value="4" inputId="4"[(ngModel)]="correcto"></p-radioButton></span>
+              <input type="text" pInputText [(ngModel)]="opcionCuatro">
+            </div>
+          </div>
+          <div class="p-col-12 p-md-12">
+            <p-dropdown [options]="categorias" [(ngModel)]="selectedCategoria"optionLabel="nombre"></p-dropdown>
+          </div>
+    </div>
+    
+    <ng-template pTemplate="footer">
+        <p-button label="Guardar"(click)="guardar()"class="p-button-info "></p-button>
+        <p-button label="Regresar" routerLink='/home' class="p-button-info "></p-button>
+    </ng-template>
+</p-card>
+
